@@ -13,11 +13,12 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: rgb(67, 187, 46);
         }
     </style>
 
 </head>
-<body class="container mt-5 bg-info">
+<body class="container mt-5">
 
     <div class="m-2 text-center">
         <h1 class="text-center" >Omonshool xususiy maktabiga ro'yxatdan o'tish</h1>
@@ -26,9 +27,25 @@
         <h2 class="text-center">Ism va Familiyangizni kiriting</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Yuborish</button>
-        </form>        
+            
+            <div class="mb-3">
+                <label for="id_first_name" class="form-label">Ism</label>
+                {{ form.first_name }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_last_name" class="form-label">Familiya</label>
+                {{ form.last_name }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_tell" class="form-label">Telefon raqam</label>
+                {{ form.tell }}
+                <div class="form-text">Format: +998 90 123 45 67</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Yuborish</button>
+        </form>
     </div>
 
 </body>
